@@ -31,6 +31,10 @@ Merb::Router.prepare do
   # resources :posts
   resources :searches
   
+  match('/').to(:controller => 'searches', :action => 'index')
+  match('/search').to(:controller => 'searches', :action => 'create').name(:search)
+  match('/service.:format').to(:controller => 'searches', :action => 'service').name(:service)
+  
   # Adds the required routes for merb-auth using the password slice
   slice(:merb_auth_slice_password, :name_prefix => nil, :path_prefix => "")
 
@@ -42,6 +46,4 @@ Merb::Router.prepare do
   
   # Change this for your home page to be available at /
   # match('/').to(:controller => 'whatever', :action =>'index')
-  match('/').to(:controller => 'searches')
-  # match('/search').to(:controller => 'searches', :action => 'create')
 end

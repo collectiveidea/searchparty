@@ -3,13 +3,49 @@ body {
   color: #333;
 }
 
-.service {
-  width: 300px;
-  float: left;
+.home form#search {
+  width: 600px;
+  margin: 10% auto;  
 }
-#google.service {
-  width: auto;
-  margin-right: 300px;
+
+form#search input {
+  font-size: 24px;
+  color: #999;
+}
+
+form#search input:focus {
+  color: #333;
+}
+
+.home form#search input#q {
+  width: 500px;
+}
+
+#services {
+  position: relative;
+  padding-left: 500px;
+}
+
+.service {
+  width: 200px;
+  float: left;
+  height: 200px;
+  overflow: hidden;
+}
+
+.service.active {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  left: 0;
+}
+.service:hover {
+  background-color: #E9E9FF;
+  cursor: pointer;
+}
+
+.service.active:hover {
+  background-color: transparent;
 }
 
 .service.loading {
@@ -24,7 +60,7 @@ body {
 
 ul.result {
   list-style: none;
-  margin: 0;
+  margin: 0 1em;
 }
 
 ul.result li {
@@ -41,4 +77,8 @@ ul.result li a {
 
 ul.result li .url {
   color: green;
+}
+
+ul.result li.mine {
+  background-color: #FFD;
 }

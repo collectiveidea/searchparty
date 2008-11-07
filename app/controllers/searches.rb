@@ -10,4 +10,8 @@ class Searches < Application
     render
   end
   
+  def service
+    render "#{params[:callback]}(#{Delicious.new('bkeepers').search(params[:q]).to_json})", :format => :json
+  end
+  
 end
