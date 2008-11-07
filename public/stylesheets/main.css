@@ -61,6 +61,7 @@ form#search input:focus {
 
 .service .header {
   padding: 1em;
+  background-color: #f9f9f9;
 }
 
 .service.active .header {
@@ -116,6 +117,10 @@ ul.result li.mine {
 
 .service .content .all {
   position: absolute;
-  right: 1em;
-  bottom: .5em;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: .5em 1em;
+  background-color: #fff;
+  text-align: right;
 }
