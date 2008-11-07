@@ -50,16 +50,11 @@ var Delicious = {
 }
 
 $(function() {
-  $('.service:first').addClass('active');
-  
   $('.service').click(function() {
     if($(this).hasClass('active')) return;
     
-    $('.service.active').animate({width: '200px', height: '200px', left: $(this).offset().left }, function() {
-      $(this).removeClass('active').css({position: 'static', left: 'auto'})
-    });
-    $(this).css({position: 'absolute', left: $(this).offset().left});
-    $(this).animate({width: '400px', height: '1000px', 'left': 0}, function() {
+    $('.service.active').animate({width: '200px', height: '200px'}, function() { $(this).removeClass('active')});
+    $(this).animate({width: '400px', height: '1000px'}, function() {
       $(this).addClass('active').css({height: 'auto'});
     });
   })
