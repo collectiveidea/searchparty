@@ -85,7 +85,6 @@ form#search input:focus {
 }
 
 .service .content {
-  padding: .5em 1em;
 }
 
 ul.result {
@@ -95,8 +94,8 @@ ul.result {
 }
 
 ul.result li {
-  margin: 0 0 1em 0;
-  padding: 0;
+  margin: 0;
+  padding: 0.5em 1em;
 }
 
 ul.result li p {
@@ -104,7 +103,7 @@ ul.result li p {
 }
 
 ul.result li a {
-  font-size: 18px;
+  font-size: 1.25em;
 }
 
 ul.result li .url {
