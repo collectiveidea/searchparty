@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>SearchParty</ShortName>
+  <Url type="text/html" method="get" template="http://localhost:4000/search?q={searchTerms}"></Url>
+  <Image width="16" height="16">http://localhost:4000/images/icon.png</Image>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+  <!-- <Url type="application/x-suggestions+json" template="http://ss.ask.com/query?q={searchTerms}&amp;li=ff"/>
+  <moz:UpdateInterval>7</moz:UpdateInterval> -->
+</OpenSearchDescription>
+
