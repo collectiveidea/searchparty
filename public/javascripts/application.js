@@ -50,9 +50,9 @@ var Delicious = {
     $('#delicious-username input[name=username]').attr('value', this.username());
     $('#delicious-username').hide().submit(function (event) {
       event.preventDefault();
-      this.username($('#delicious-username input[name=username]').attr('value'));
+      Delicious.username($('#delicious-username input[name=username]').attr('value'));
       $(this).hide();
-      this.setTitle();
+      Delicious.setTitle();
     });
     $('a#customize-delicious').click(function() {
       $('#delicious-username').show();
