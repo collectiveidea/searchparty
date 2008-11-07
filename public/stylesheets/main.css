@@ -24,16 +24,18 @@ form#search input:focus {
 #services {
   padding-left: 550px;
   width: 250px;
+  margin-top: 1em;
 }
 
 .service {
+  position: relative;
   height: 250px;
   overflow: hidden;
   width: 249px;
   float: left;
-  margin-bottom: 18px;
   border-right: 1px solid #EEE;
 }
+
 #google.service {
   width: 549px;
   margin-left: -550px;
@@ -47,16 +49,9 @@ form#search input:focus {
   height: auto;
   margin-left: -550px;
 }
+
 .service.inactive {
   display: none;
-}
-.service:hover h2 {
-  background-color: #E9E9FF;
-  cursor: pointer;
-}
-
-.service.active:hover h2 {
-  background-color: transparent;
 }
 
 .service.loading {
@@ -64,23 +59,43 @@ form#search input:focus {
   background: url(../images/loading.gif) no-repeat center;
 }
 
-.service h2 {
+.service .header {
+  padding: 1em;
+}
+
+.service.active .header {
+  background-color: #E9E9FF;
+}
+
+.service:hover .header {
+  background-color: #E9E9FF;
+  cursor: pointer;
+}
+
+.service .header h2 {
   font-size: 16px;
   color: #666;
-  padding: 9px 18px;
+  margin: 0;
   background: url(../images/icon-zoom-in.png) no-repeat right center;
 }
-.service.active h2 {
+
+.service.active .header h2 {
   background-image: url(../images/icon-zoom-out.png);
+}
+
+.service .content {
+  padding: .5em 1em;
 }
 
 ul.result {
   list-style: none;
-  margin: 0 18px;
+  margin: 0;
+  padding: 0;
 }
 
 ul.result li {
-  margin-bottom: 1em;
+  margin: 0 0 1em 0;
+  padding: 0;
 }
 
 ul.result li p {
@@ -97,4 +112,10 @@ ul.result li .url {
 
 ul.result li.mine {
   background-color: #FFD;
+}
+
+.service .content .all {
+  position: absolute;
+  right: 1em;
+  bottom: .5em;
 }
