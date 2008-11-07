@@ -3,22 +3,31 @@ body {
   color: #333;
 }
 
+h1 {
+  float: left;
+  font-size: 24px;
+  color: #99A;
+  margin-right: 18px;
+}
+h1 span {
+  color: #667;
+}
+h1 a       { color: inherit; }
+h1 a:hover { text-decoration: none; }
+
 .home form#search {
   width: 600px;
   margin: 10% auto;  
 }
 
-form#search input {
-  font-size: 24px;
+form#search input#q {
+  width: 300px;
+/*  font-size: 24px;*/
   color: #999;
 }
 
 form#search input:focus {
   color: #333;
-}
-
-.home form#search input#q {
-  width: 500px;
 }
 
 #services {

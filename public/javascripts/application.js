@@ -45,6 +45,20 @@ var Google = {
 
 
 var Delicious = {
+  init: function() {
+    this.setTitle();
+    $('#delicious-username input[name=username]').attr('value', this.username());
+    $('#delicious-username').hide().submit(function (event) {
+      event.preventDefault();
+      this.username($('#delicious-username input[name=username]').attr('value'));
+      $(this).hide();
+      this.setTitle();
+    });
+    $('a#customize-delicious').click(function() {
+      $('#delicious-username').show();
+    });
+  },
+  
   result: function(data) {
     $(['user', 'everyone']).each(function() {
       var is_mine = this == 'user';
@@ -87,15 +101,5 @@ $(function() {
     }
   });
   
-  Delicious.setTitle();
-  $('#delicious-username input[name=username]').attr('value', Delicious.username());
-  $('#delicious-username').hide().submit(function (event) {
-    event.preventDefault();
-    Delicious.username($('#delicious-username input[name=username]').attr('value'));
-    $(this).hide();
-    Delicious.setTitle();
-  });
-  $('a#customize-delicious').click(function() {
-    $('#delicious-username').show();
-  });
+  Delicious.init();
 })
