@@ -46,7 +46,6 @@ var Google = {
 
 var Delicious = {
   result: function(data) {
-    console.log(data);
     $(['user', 'everyone']).each(function() {
       var is_mine = this == 'user';
       $(data[this]).each(function() {
@@ -61,11 +60,23 @@ var Delicious = {
       
     });
     $('#delicious').removeClass('loading');
+  },
+  
+  username: function(val) {
+    return $.cookie('delicious.username', val)
+  },
+  
+  setTitle: function() {
+    if(Delicious.username())
+      $('a#customize-delicious').html(Delicious.username());
+    
   }
 }
 
 $(function() {
-  $('.service').click(function() {
+  $('.service').click(function(event) {
+    if($(event.target).is('a')) return;
+    
     if($(this).hasClass('active')) {
       $(this).removeClass('active');
       $('.service.inactive').removeClass('inactive');
@@ -74,5 +85,17 @@ $(function() {
       $(this).addClass('active');
       $('.service:not(.active)').addClass('inactive');
     }
-  })
+  });
+  
+  Delicious.setTitle();
+  $('#delicious-username input[name=username]').attr('value', Delicious.username());
+  $('#delicious-username').hide().submit(function (event) {
+    event.preventDefault();
+    Delicious.username($('#delicious-username input[name=username]').attr('value'));
+    $(this).hide();
+    Delicious.setTitle();
+  });
+  $('a#customize-delicious').click(function() {
+    $('#delicious-username').show();
+  });
 })

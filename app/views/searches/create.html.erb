@@ -13,7 +13,9 @@
 
   <div id="delicious" class="service loading">
     <div class="header">
-      <h2>Delicious</h2>
+      <h2>Delicious
+        — <a href="#customize" id="customize-delicious">Customize</a>
+      </h2>
     </div>
     <div class="content">
       <ul id="delicious-result" class="result"></ul>
@@ -31,6 +33,11 @@
     </div>
   </div>
 </div>
+<form action="#delicious" id="delicious-username" class="customize">
+  Delicious username:
+  <input type="text" name="username" />
+  <input type="submit" value="save">
+</form>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;q=<%=h params[:q] %>&amp;callback=Google.result&amp;rsz=large"></script>
 <script type="text/javascript" src="/service.json?q=<%=h params[:q] %>&amp;callback=Delicious.result"></script>

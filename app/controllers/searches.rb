@@ -11,7 +11,7 @@ class Searches < Application
   end
   
   def service
-    render "#{params[:callback]}(#{Delicious.new('bkeepers').search(params[:q]).to_json})", :format => :json
+    render "#{params[:callback]}(#{Delicious.new(cookies['delicious.username']).search(params[:q]).to_json})", :format => :json
   end
   
 end

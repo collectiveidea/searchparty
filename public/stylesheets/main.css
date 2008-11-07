@@ -124,3 +124,14 @@ ul.result li.mine {
   background-color: #fff;
   text-align: right;
 }
+
+form.customize {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  top: 30%;
+  margin-left: -218px;
+  background-color: #FFF;
+  padding: 18px;
+  border: 1px solid #DDD;
+}
