@@ -22,11 +22,10 @@ h1 a:hover { text-decoration: none; }
 
 form#search input#q {
   width: 300px;
-/*  font-size: 24px;*/
   color: #999;
 }
 
-form#search input:focus {
+form#search input#q:focus {
   color: #333;
 }
 
