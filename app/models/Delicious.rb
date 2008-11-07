@@ -4,7 +4,7 @@ class Delicious
   URL = "http://delicious.com/search?p=%s&u=%u&context=userposts"
   
   def initialize(username)
-    @url = URL.sub('%u', username)
+    @url = URL.sub('%u', username.to_s)
   end
   
   def search(query)
