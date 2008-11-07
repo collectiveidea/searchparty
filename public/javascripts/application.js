@@ -48,14 +48,16 @@ var Delicious = {
   init: function() {
     this.setTitle();
     $('#delicious-username input[name=username]').attr('value', this.username());
-    $('#delicious-username').hide().submit(function (event) {
-      event.preventDefault();
+    $('#delicious-username').hide().submit(function () {
       Delicious.username($('#delicious-username input[name=username]').attr('value'));
       $(this).hide();
       Delicious.setTitle();
+      window.location = window.location.href;
+      return false;
     });
     $('a#customize-delicious').click(function() {
       $('#delicious-username').show();
+      return false;
     });
   },
   
@@ -87,19 +89,17 @@ var Delicious = {
   }
 }
 
-$(function() {
-  $('.service').click(function(event) {
-    if($(event.target).is('a')) return;
-    
-    if($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $('.service.inactive').removeClass('inactive');
-    } else {
-      $('.service.active').removeClass('active');
-      $(this).addClass('active');
-      $('.service:not(.active)').addClass('inactive');
-    }
-  });
+$('.service').click(function(event) {
+  if($(event.target).is('a')) return;
   
-  Delicious.init();
-})
+  if($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    $('.service.inactive').removeClass('inactive');
+  } else {
+    $('.service.active').removeClass('active');
+    $(this).addClass('active');
+    $('.service:not(.active)').addClass('inactive');
+  }
+});
+
+Delicious.init();
