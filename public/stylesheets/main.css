@@ -1,5 +1,5 @@
 body {
-  padding: 2em;
+  padding: 18px 36px;
   color: #333;
 }
 
@@ -21,23 +21,41 @@ form#search input:focus {
   width: 500px;
 }
 
+#services {
+  padding-left: 550px;
+  width: 250px;
+}
+
 .service {
-  width: 200px;
-  float: left;
-  height: 200px;
+  height: 250px;
   overflow: hidden;
+  width: 249px;
+  float: left;
+  margin-bottom: 18px;
+  border-right: 1px solid #EEE;
+}
+#google.service {
+  width: 549px;
+  margin-left: -550px;
+  height: auto;
 }
 
 .service.active {
-  width: 400px;
+  width: 100%;
+  float: none;
+  width: auto !important;
   height: auto;
+  margin-left: -550px;
 }
-.service:hover {
+.service.inactive {
+  display: none;
+}
+.service:hover h2 {
   background-color: #E9E9FF;
   cursor: pointer;
 }
 
-.service.active:hover {
+.service.active:hover h2 {
   background-color: transparent;
 }
 
@@ -47,13 +65,18 @@ form#search input:focus {
 }
 
 .service h2 {
-  font-size: 20px;
+  font-size: 16px;
   color: #666;
+  padding: 9px 18px;
+  background: url(../images/icon-zoom-in.png) no-repeat right center;
+}
+.service.active h2 {
+  background-image: url(../images/icon-zoom-out.png);
 }
 
 ul.result {
   list-style: none;
-  margin: 0 1em;
+  margin: 0 18px;
 }
 
 ul.result li {

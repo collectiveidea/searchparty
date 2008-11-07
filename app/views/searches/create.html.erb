@@ -1,12 +1,15 @@
 <%= partial :search %>
 
-<h1>Search Results for <em>"<%=h params[:q] %>"</em></h1>
-
 <div id="services">
   <div id="google" class="service loading">
     <h2>Google</h2>
     <ul id="google-result" class="result"></ul>
     <a href="http://www.google.com/search?q=<%=h params[:q] %>">View all from Google</a>
+  </div>
+
+  <div id="delicious" class="service loading">
+    <h2>Delicious</h2>
+    <ul id="delicious-result" class="result"></ul>
   </div>
 
   <div id="github" class="service loading">
@@ -15,11 +18,8 @@
     <a href="http://github.com/search?q=<%=h params[:q] %>">View all from GitHub</a>
   </div>
 
-  <div id="delicious" class="service loading">
-    <h2>Delicious</h2>
-    <ul id="delicious-result" class="result"></ul>
-  </div>
 </div>
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;q=<%=h params[:q] %>&amp;callback=Google.result&amp;rsz=large"></script>
-<script type="text/javascript" src="http://github.com/api/v1/json/search/<%=h params[:q] %>?callback=GitHub.result"></script>
 <script type="text/javascript" src="/service.json?q=<%=h params[:q] %>&amp;callback=Delicious.result"></script>
+<script type="text/javascript" src="http://github.com/api/v1/json/search/<%=h params[:q] %>?callback=GitHub.result"></script>

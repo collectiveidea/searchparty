@@ -1,17 +1,32 @@
-var GitHub = {
+var Base = {
+  addItem: function(item) {
+    $('#' + this.name + '-result').append(item);
+  },
+  
+  loaded: function() {
+    $('#' + this.name).removeClass('loading');
+  }
+  
+}
+
+var GitHub = jQuery.extend({
+  name: 'github',
+  
   result: function(data) {
+    base = this;
     $(data.repositories).each(function() {
-      $('#github-result').append(
+      base.addItem(
         '<li>' + 
           '<a href="' + this.url + '">' + this.name + '</a>' +
           '<p>' + this.description + '</p>' +
           '<div class="url">' + this.url + '</div>' +
         '</li>'
       );
-      $('#github').removeClass('loading');
     });
-  }
-}
+    this.loaded();
+  },
+  
+}, Base);
 
 var Google = {
   result: function(data) {
@@ -51,11 +66,13 @@ var Delicious = {
 
 $(function() {
   $('.service').click(function() {
-    if($(this).hasClass('active')) return;
-    
-    $('.service.active').animate({width: '200px', height: '200px'}, function() { $(this).removeClass('active')});
-    $(this).animate({width: '400px', height: '1000px'}, function() {
-      $(this).addClass('active').css({height: 'auto'});
-    });
+    if($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $('.service.inactive').removeClass('inactive');
+    } else {
+      $('.service.active').removeClass('active');
+      $(this).addClass('active');
+      $('.service:not(.active)').addClass('inactive');
+    }
   })
 })
