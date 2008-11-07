@@ -70,27 +70,23 @@ form#search input:focus {
 
 .service .header {
   padding: 1em;
-  background-color: #494945;
+  background-color: #f9f9f9;
 }
 
 .service.active .header {
-  background-color: #000;
+  background-color: #E9E9FF;
 }
 
 .service:hover .header {
-  background-color: #000;
+  background-color: #E9E9FF;
   cursor: pointer;
 }
 
 .service .header h2 {
   font-size: 16px;
-  color: #fff;
+  color: #666;
   margin: 0;
   background: url(../images/icon-zoom-in.png) no-repeat right center;
-}
-
-.service .header h2 a {
-  color: #C4D8ED;
 }
 
 .service.active .header h2 {
@@ -133,11 +129,10 @@ ul.result li.mine {
   bottom: 0;
   left: 0;
   padding: .5em 1em;
-  background-image: url(../images/grad_black.png);
-  background-position: left -40px;
+  background-image: url(../images/grad_white.png);
+  background-position: left -70px;
   background-repeat: repeat-x;
   text-align: right;
-  color: #fff;
   font-weight: bold;
 }
 
