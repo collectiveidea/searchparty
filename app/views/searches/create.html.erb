@@ -1,0 +1,16 @@
+<h1>Search Results for <em>"<%=h params[:q] %>"</em></h1>
+
+<div id="google" class="service loading">
+  <h2>Google</h2>
+  <ul id="google-result" class="result"></ul>
+  <a href="http://www.google.com/search?q=<%=h params[:q] %>">View all from Google</a>
+</div>
+
+<div id="github" class="service loading">
+  <h2>GitHub</h2>
+  <ul id="github-result" class="result"></ul>
+  <a href="http://github.com/search?q=<%=h params[:q] %>">View all from GitHub</a>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=<%=h params[:q] %>&callback=Google.result&rsz=large"></script>
+<script type="text/javascript" src="http://github.com/api/v1/json/search/<%=h params[:q] %>?callback=GitHub.result"></script>
