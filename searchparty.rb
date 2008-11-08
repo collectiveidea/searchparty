@@ -1,3 +1,13 @@
+require 'rubygems'
+require 'sinatra'
+require 'json'
+
+helpers do
+  def query
+    escape_html params[:q] if params[:q]
+  end
+end
+
 require 'mechanize'
 
 class Delicious
@@ -23,4 +33,17 @@ class Delicious
     
     {:user => user, :everyone => everyone}
   end
+end
+
+get '/' do
+  erb :index
+end
+
+get '/search' do
+  erb :search
+end
+
+get '/delicious' do
+  content_type 'application/json', :charset => 'utf-8'
+  "#{params[:callback]}(#{Delicious.new(request.cookies['delicious.username']).search(params[:q]).to_json})"
 end
