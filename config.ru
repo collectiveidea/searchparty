@@ -1,4 +1,6 @@
-$: += Dir[File.dirname(__FILE__) + '/vendor/*/lib'].map {|f| File.expand_path(f) }
+$: << File.dirname(__FILE__) + '/vendor/sinatra/lib'
+$: << File.dirname(__FILE__) + '/vendor/mechanize/lib'
+$: << File.dirname(__FILE__) + '/vendor/json_pure/lib'
 
 require 'rubygems'
 require 'sinatra'
