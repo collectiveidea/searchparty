@@ -1,4 +1,4 @@
-$: << File.dirname(__FILE__) + '/vendor/sinatra/lib'
+$: += Dir[File.dirname(__FILE__) + '/vendor/*/lib'].map {|f| File.expand_path(f) }
 
 require 'rubygems'
 require 'sinatra'
