@@ -17,9 +17,10 @@ h1 span {
 h1 a       { color: inherit; }
 h1 a:hover { text-decoration: none; }
 
+
 .home form#search {
   width: 600px;
-  margin: 10% auto;  
+  margin: 20% auto;  
 }
 
 form#search input#q {
