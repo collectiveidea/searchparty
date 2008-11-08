@@ -11,7 +11,7 @@ set :deploy_to, "/home/collectiveidea/search.collectiveidea.com"
 set :user, "collectiveidea"
 set :use_sudo, false
 set :scm, :git
-set :branch, 'sinatra'
+set :branch, 'master'
 set :git_enable_submodules, true
 set :deploy_via, :remote_cache
 set :ssh_options, {:forward_agent => true}
